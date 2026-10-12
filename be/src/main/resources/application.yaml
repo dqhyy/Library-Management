@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: be
+  profiles:
+    active: local #Nạp thêm file application-local vào file chính
+#  DataSource
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:library_db}?useSSL=false&serverTimezone=Asia/Ho_Chi_Minh&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+#   Connection pool
+    hikari:
+      maximum-pool-size: 10 # Tối đa 10 kết nối cùng lúc
+      minimum-idle: 2
+#  JPA/Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: validate # Tự so entity với bảng trong db
+    open-in-view: false
+    properties:
+      jdbc:
+        time_zone: Asia/Ho_Chi_Minh
+      hibernate:
+        format_sql: true
+#   Log SQL
+    show-sql: true
+
+
+server:
+  port: 8080
