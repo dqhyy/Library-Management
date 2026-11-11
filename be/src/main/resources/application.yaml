@@ -22,8 +22,9 @@ spring:
         time_zone: Asia/Ho_Chi_Minh
       hibernate:
         format_sql: true
+        default_batch_fetch_size: 16
 #   Log SQL
-    show-sql: true
+    show-sql: false
 
 
 server:

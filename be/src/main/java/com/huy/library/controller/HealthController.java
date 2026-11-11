@@ -1,5 +1,6 @@
 package com.huy.library.controller;
 
+import com.huy.library.dto.response.ApiResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,8 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HealthController {
 
     @GetMapping("/api/health")
-    public String health() {
-        return "Hello Library is running";
+    public ApiResponse<String> health() {
+        return ApiResponse.success("Library API is running");
     }
-
 }
